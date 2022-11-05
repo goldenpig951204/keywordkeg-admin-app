@@ -18,6 +18,7 @@ const pipiadsCtrl = require("../controllers/pipiadsCtrl");
 const keywordkegCtrl = require("../controllers/keywordkegCtrl");
 const paraphraserCtrl = require("../controllers/paraphraserCtrl");
 const buzzsumoCtrl = require("../controllers/buzzsumoCtrl");
+const articleforgeCtrl = require("../controllers/articleforgeCtrl");
 const proxyCtrl = require("../controllers/proxyCtrl");
 const settingCtrl = require("../controllers/settingCtrl");
 const siteCtrl = require("../controllers/siteCtrl");
@@ -50,6 +51,7 @@ router.post("/api/pipiads/login", pipiadsCtrl.login);
 router.post("/api/keywordkeg/login", keywordkegCtrl.login);
 router.post("/api/paraphraser/login", paraphraserCtrl.login);
 router.post("/api/buzzsumo/login", buzzsumoCtrl.login);
+router.post("/api/articleforge/login", articleforgeCtrl.login);
 
 router.get("/api/sites", siteCtrl.getSites);
 router.get("/api/sites/:id", siteCtrl.getSite);

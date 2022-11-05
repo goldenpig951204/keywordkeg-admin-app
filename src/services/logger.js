@@ -218,6 +218,18 @@ const buzzsumoLog = winston.createLogger({
     ]
 });
 
+const articleforgeLog = winston.createLogger({
+    format: defaultFormat,
+    transports: [
+        new winston.transports.DailyRotateFile({
+            filename: path.join(__dirname, '../public/logs/articleforge-%DATE%.log'),
+            datePattern: 'YYYY-MM-DD-HH',
+            zippedArchive: false,
+            maxSize: '500k',
+            maxFiles: '7d', // Auto delete the log after 7 days
+        }),
+    ]
+});
 module.exports = {
     serverLog,
     semrushLog,
@@ -234,5 +246,6 @@ module.exports = {
     pipiadsLog,
     keywordkegLog,
     paraphraserLog,
-    buzzsumoLog
+    buzzsumoLog,
+    articleforgeLog
 }
